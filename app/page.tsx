@@ -92,25 +92,15 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Side-by-side Owner Photos - Staggered Layout */}
+          {/* Single Owner Portrait - Focus Layout */}
           <div className="md:col-span-4 lg:col-span-5 relative mt-12 md:mt-32 reveal stagger-2">
-            <div className="flex gap-4 items-start">
-              <div className="flex-1 aspect-[3/4] relative border-8 border-background shadow-xl overflow-hidden">
-                <Image
-                  src="/images/gallery/Dona.jpeg"
-                  alt="Dona - C&M Studio"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="flex-1 aspect-[3/4] relative border-8 border-background shadow-xl overflow-hidden mt-16 md:mt-24">
-                <Image
-                  src="/images/gallery/Dona1.jpeg"
-                  alt="Dona - C&M Studio Detalle"
-                  fill
-                  className="object-cover"
-                />
-              </div>
+            <div className="relative aspect-[3/4] w-full max-w-[400px] ml-auto border-8 border-background shadow-2xl overflow-hidden">
+              <Image
+                src="/images/gallery/Dona1.jpeg"
+                alt="Dona - C&M Studio"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
