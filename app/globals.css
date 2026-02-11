@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fdfaf7;
+  /* Creamy off-white */
+  --foreground: #2d241e;
+  /* Deep Cacao */
+
+  /* Palette: Sand, Earth, and Nails-inspired neutrals */
+  --accent: #d4a373;
+  /* Soft Sand */
+  --accent-muted: #e6ccb2;
+  --secondary: #7f5539;
+  /* Rich Earth */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-muted: var(--accent-muted);
+  --color-secondary: var(--secondary);
+
+  --font-sans: var(--font-geist-sans);
+  --font-display: var(--font-playfair);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #ede0d4;
+  color: #2d241e;
+}
+
+/* Base Animations */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  animation: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
