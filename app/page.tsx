@@ -1,6 +1,42 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 export default function Home() {
+  const [activeImages, setActiveImages] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const indexStr = entry.target.getAttribute("data-index");
+          if (indexStr === null) return;
+          const index = Number(indexStr);
+
+          if (entry.isIntersecting) {
+            setActiveImages((prev) => new Set(prev).add(index));
+          } else {
+            setActiveImages((prev) => {
+              const next = new Set(prev);
+              next.delete(index);
+              return next;
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+        rootMargin: "0px 0px -10% 0px" // Trigger slightly before the center
+      }
+    );
+
+    const images = document.querySelectorAll(".gallery-item");
+    images.forEach((img) => observer.observe(img));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       {/* Background Decorative Fragment */}
@@ -8,8 +44,8 @@ export default function Home() {
 
       {/* 90/10 Asymmetric Container */}
       <main className="container mx-auto px-6 pt-24 pb-32">
-        {/* Navigation / Logo Fragment */}
-        <nav className="fixed top-8 left-6 md:left-12 z-50 flex items-center gap-4">
+        {/* Navigation / Logo Fragment - Absolute to stay at the top */}
+        <nav className="absolute top-8 left-6 md:left-12 z-50 flex items-center gap-4">
           <div className="bg-white/80 backdrop-blur-md p-2 rounded-full border border-foreground/5 shadow-sm">
             <Image
               src="/images/gallery/Logo.jpeg"
@@ -132,13 +168,18 @@ export default function Home() {
               "/images/gallery/Exemplo3.jpeg",
               "/images/gallery/Exemplo4.jpeg"
             ].map((img, idx) => (
-              <div key={idx} className="break-inside-avoid overflow-hidden border border-foreground/5 group">
+              <div
+                key={idx}
+                data-index={idx}
+                className="gallery-item break-inside-avoid overflow-hidden border border-foreground/5 group transition-all duration-700"
+              >
                 <Image
                   src={img}
                   alt={`Trabajo realizado ${idx + 1}`}
                   width={500}
                   height={idx % 2 === 0 ? 600 : 400}
-                  className="w-full h-auto grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
+                  className={`w-full h-auto transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105 ${activeImages.has(idx) ? "grayscale-0" : "grayscale"
+                    }`}
                 />
               </div>
             ))}
@@ -150,7 +191,7 @@ export default function Home() {
           <div className="flex items-center gap-4">
             <Image src="/images/gallery/Logo.jpeg" alt="Logo Footer" width={30} height={30} className="rounded-full grayscale" />
             <p className="text-xs text-foreground/40 tracking-widest uppercase">
-              © 2026 C&M Studio Nails. Todos los derechos reservados.
+              © 2026 C&M Studio Nails. Todos os direitos reservados.
             </p>
           </div>
           <div className="flex gap-12 text-xs tracking-widest uppercase font-medium">
