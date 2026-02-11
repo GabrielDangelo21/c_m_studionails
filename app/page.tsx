@@ -60,9 +60,9 @@ export default function Home() {
           </h2>
         </nav>
 
-        {/* Hero Section - Fragmented Layout */}
-        <section className="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-start pt-12">
-          <div className="md:col-span-8 lg:col-span-7 reveal stagger-1">
+        {/* Hero Section - Balanced Grid for Side-by-Side Layout */}
+        <section className="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-12">
+          <div className="md:col-span-7 lg:col-span-7 reveal stagger-1">
             <span className="inline-block text-accent font-medium tracking-widest uppercase text-xs mb-4">
               Estudio de Belleza Profesional
             </span>
@@ -92,9 +92,9 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Single Owner Portrait - Focus Layout - Maximum Impact Size */}
-          <div className="md:col-span-5 lg:col-span-6 relative mt-6 md:mt-20 reveal stagger-2">
-            <div className="relative aspect-[3/4] w-full max-w-[700px] ml-auto border-8 border-background shadow-2xl overflow-hidden">
+          {/* Single Owner Portrait - Fixed Spans to prevent wrapping */}
+          <div className="md:col-span-5 lg:col-span-5 relative reveal stagger-2">
+            <div className="relative aspect-[3/4] w-full max-w-[380px] lg:max-w-[420px] ml-auto border-8 border-background shadow-2xl overflow-hidden">
               <Image
                 src="/images/gallery/Dona1.jpeg"
                 alt="Dona - C&M Studio"
