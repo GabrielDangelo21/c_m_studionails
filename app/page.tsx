@@ -78,12 +78,12 @@ export default function Home() {
 
             <div className="flex flex-col sm:flex-row gap-6 mb-16">
               <a
-                href="https://wa.me/34622160989"
+                href="https://wa.me/34622160989?text=Hola!%20Me%20gustaría%20consultar%20disponibilidad%20para%20una%20cita%20en%20C%26M%20Studio."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative px-8 py-4 bg-foreground text-background overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 text-center"
               >
-                <span className="relative z-10 font-medium text-sm tracking-widest uppercase">Reservar Cita</span>
+                <span className="relative z-10 font-medium text-sm tracking-widest uppercase">Pedir Cita</span>
                 <div className="absolute inset-0 bg-accent translate-y-full transition-transform group-hover:translate-y-0" />
               </a>
               <a href="#galeria" className="px-8 py-4 border border-foreground/10 hover:border-accent transition-colors duration-300 text-center font-medium text-sm tracking-widest uppercase">
