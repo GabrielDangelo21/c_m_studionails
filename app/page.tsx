@@ -116,8 +116,8 @@ export default function Home() {
 
               <div className="space-y-12 mb-16">
                 {[
-                  { title: "Manicura Premium", desc: "Cuidado profundo, limado y esmaltado de larga duración.", price: "desde 25€" },
-                  { title: "Pedicura Spa", desc: "Tratamiento revitalizante para una relajación total.", price: "desde 35€" },
+                  { title: "Manicura Premium", desc: "Cuidado profundo, limado y esmaltado de larga duración.", price: "desde 27€" },
+                  { title: "Pedicura y Spa", desc: "Tratamiento revitalizante para una relajación total.", price: "desde 30€" },
                   { title: "Nail Art", desc: "Diseños personalizados hechos a mano con pincel fino.", price: "desde 5€" },
                 ].map((service, idx) => (
                   <div key={idx} className="group cursor-default border-b border-foreground/5 pb-6">
@@ -134,15 +134,12 @@ export default function Home() {
             <div className="relative group overflow-hidden">
               <div className="absolute inset-0 bg-foreground/5 group-hover:bg-transparent transition-colors z-10" />
               <Image
-                src="/images/gallery/Catalogo.jpeg"
+                src="/images/gallery/catalogo_novo.png"
                 alt="Catálogo C&M Studio"
-                width={600}
-                height={800}
+                width={1024}
+                height={1536}
                 className="w-full h-auto grayscale-[50%] group-hover:grayscale-0 transition-all duration-500"
               />
-              <div className="absolute bottom-6 left-6 z-20 bg-background/90 p-4 border border-accent/20">
-                <p className="text-xs tracking-[0.2em] font-medium uppercase">Tendencias 2026</p>
-              </div>
             </div>
           </div>
         </section>
