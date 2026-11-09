@@ -153,7 +153,15 @@ export default function Home() {
               "/images/gallery/Exemplo1.jpeg",
               "/images/gallery/Exemplo2.jpeg",
               "/images/gallery/Exemplo3.jpeg",
-              "/images/gallery/Exemplo4.jpeg"
+              "/images/gallery/Exemplo4.jpeg",
+              "/images/gallery/Exemplo5.jpeg",
+              "/images/gallery/Exemplo6.jpeg",
+              "/images/gallery/Exemplo7.jpeg",
+              "/images/gallery/Exemplo8.jpeg",
+              "/images/gallery/Exemplo9.jpeg",
+              "/images/gallery/Exemplo91.jpeg",
+              "/images/gallery/Exemplo92.jpeg",
+              "/images/gallery/Exemplo93.jpeg"
             ].map((img, idx) => (
               <div
                 key={idx}
